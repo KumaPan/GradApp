@@ -21,8 +21,8 @@
           </a>
           <div  :class="{'d-none': isDropdownHidden}" class="dropdown buttonProfile" id="profile">
             <div  class="card card-body" id="profiling">
-              <a  to="/dashboard/profile" class="" type="button">Profile</a>
-              <a class="mt-2" type="button">#ADD</a>
+              <a  href="/dashboard/profile" class="" type="button">Profile</a>
+              <a href="/dashboard/leads" class="mt-2" type="button">Lead test</a>
               <button @click="logout()" class="btn btn-danger mt-2">Logout</button>
             </div>
           </div>
