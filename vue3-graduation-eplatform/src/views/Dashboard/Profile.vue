@@ -11,13 +11,15 @@ import axios from 'axios'
 // import { response } from 'express';
 import DashboardComponent from '@/components/layouts/DashboardComponent.vue';
 import ProfileComponent from '@/components/ProfileComponent.vue';
+// import PersonaComponent from '@/components/PersonaComponent.vue';
 
 export default{
     name: 'Profile',
 
     components: {
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    // PersonaComponent,
 },
 
     methods:{

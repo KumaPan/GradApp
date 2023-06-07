@@ -3,19 +3,20 @@
     <div class="container" >  
         <div class="row">
             <div class="col-md-12 p-1">
-                <!-- <h2>Profile Component</h2> -->
+                <h2>Overview</h2>
+                <PersonaComponent />
                 <h2 class="">{{ lead.title }}</h2>
-
+                <hr>
                 <router-link to="/" class="btn btn-primary" type="button">Edit</router-link>
             </div>
-            <div class="col-md-6">   
+            <div class="col-md-6 pt-1">   
                 <div class="card" style="height:15rem;">
                     <div class="card-body">
                         <h3 class="card-title">Contact information</h3>
                     </div>
                 </div>             
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 pt-1">
                 <div class="card" style="height: 15rem;">
                     <div class="card-body">
                         <h3 class="card-title">Details</h3>
@@ -23,6 +24,7 @@
                 </div>
             </div>
         </div>
+        <hr>
     </div>
 </div>
 </template>
@@ -31,6 +33,7 @@
 
 import axios from 'axios'
 
+import PersonaComponent from '@/components/PersonaComponent.vue';
 
 export default{
     name: 'ProfileComponent',
@@ -41,6 +44,7 @@ export default{
     },
 
     components: {
+        PersonaComponent,
         
     },
 
