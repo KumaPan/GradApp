@@ -25,6 +25,9 @@
             </div>
         </div>
         <hr>
+        <div class="col-md-12">
+            <h2>Current Path</h2>
+        </div>
     </div>
 </div>
 </template>
