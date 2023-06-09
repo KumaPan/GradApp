@@ -20,6 +20,19 @@ import DemoPage from '../views/Practice/DemoPage.vue'
 import DemoLearningPage from '../views/Learning/DemoLearningPage.vue'
 
 
+//Omnichannel links
+import Omnichannel from '../views/Omnichannel/Omnichannel.vue'
+import Place from '../views/Omnichannel/Place.vue'
+import Product from '../views/Omnichannel/Product.vue'
+import Promotion from '../views/Omnichannel/Promotion.vue'
+import Price from '../views/Omnichannel/Price.vue'
+
+//Product information
+import PlaceInformation from '../views/ProductInformation/PlaceInformation.vue'
+import PriceInformation from '../views/ProductInformation/PriceInformation.vue'
+import ProductInformation from '../views/ProductInformation/ProductInformation.vue'
+import PromotionInformation from '../views/ProductInformation/PromotionInformation.vue'
+
 
 const routes = [
   {
@@ -134,6 +147,78 @@ const routes = [
     path: '/learning/demo-page',
     name: 'DemoLearningPage',
     component: DemoLearningPage,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/omnichannel/omnichannel',
+    name: 'Omnichannel',
+    component: Omnichannel,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/omnichannel/product',
+    name: 'Product',
+    component: Product,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/omnichannel/place',
+    name: 'Place',
+    component: Place,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/omnichannel/price',
+    name: 'Price',
+    component: Price,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/omnichannel/promotion',
+    name: 'Promotion',
+    component: Promotion,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/product-information/place',
+    name: 'PlaceInformation',
+    component: PlaceInformation,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/product-information/price',
+    name: 'PriceInformation',
+    component: PriceInformation,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/product-information/promotion',
+    name: 'PromotionInformation',
+    component: PromotionInformation,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/product-information/product',
+    name: 'Place',
+    component: Place,
     meta: {
       requireLogin: true
     }

@@ -230,7 +230,7 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
    body{
         background-color: #048171 !important;
     }
