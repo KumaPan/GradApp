@@ -23,8 +23,8 @@
             <i class="bi bi-person-circle"></i>
           </a>
           <div  :class="{'d-none': isDropdownHidden}" class="dropdown buttonProfile" id="profile">
-            <div  class="card card-body" id="profiling">
-              <a  href="/dashboard/profile" class="" type="button">Profile</a>
+            <div v-for="lead in leads" v-bind:key="lead.id" class="card card-body" id="profiling">
+              <router-link :to="{ name: 'ProfileRouter', params: { id:lead.id }}"  class="" type="button">Profile</router-link>
               <a href="/dashboard/leads" class="mt-2" type="button">Lead test</a>
               <button @click="logout()" class="btn btn-danger mt-2">Logout</button>
             </div>
@@ -32,7 +32,7 @@
         </div>
 
         <div v-else id="button-group">
-        <router-link type="button" class="btn text-white ms-2" style="background-color: #0D1E37" to="/login">Login</router-link>
+        <router-link type="button" class="btn text-white ms-2" style="background-color: #0D1E37" :to="{ name: 'ProfileRouter', params: { id:lead.id }}">Login</router-link>
         <router-link type="button" class="btn text-white ms-2" style="background-color: #027B48" to="/sign-up">Sign up</router-link>
       </div>
      
@@ -54,7 +54,8 @@ import axios from 'axios'
           return{
             isDropdownHidden: true,
             isMounted: false,
-            storeState: this.$store.state.isAuthenticated
+            storeState: this.$store.state.isAuthenticated,
+            leads: [],
           };
         },
 
@@ -63,6 +64,8 @@ import axios from 'axios'
       console.log(this.storeState);
       this.isMounted = true;
     }
+
+    this.getLeads()
   },
         
         components:{
@@ -89,6 +92,17 @@ import axios from 'axios'
                 this.$store.commit('removeToken')
 
                 this.$router.push('/')
+        },
+        getLeads(){
+            axios
+                .get('/api/v1/leads/')
+                .then(response=>{
+                    this.leads = response.data
+                })
+
+                .catch(error =>{
+                    console.log(error)
+                })
         }
         }
     }

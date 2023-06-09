@@ -59,7 +59,7 @@ import axios from 'axios'
 
               localStorage.setItem('token', token)
 
-              this.$router.push('/dashboard/lesson-prechoice')
+              this.$router.push('/dashboard/')
             })
             .catch(error =>{
             if(error.response){

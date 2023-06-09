@@ -18,6 +18,11 @@ import SecondLesson from '../views/Dashboard/SecondLesson.vue'
 import ThirdLesson from '../views/Dashboard/ThirdLesson.vue'
 import DemoPage from '../views/Practice/DemoPage.vue'
 import DemoLearningPage from '../views/Learning/DemoLearningPage.vue'
+import ProfileRouter from '../views/Dashboard/ProfileRouter.vue'
+
+//Components
+// import ProfileComponent from '../components/layouts/ProfileComponent.vue'
+
 
 
 //Omnichannel links
@@ -75,6 +80,14 @@ const routes = [
     path: '/dashboard/profile',
     name: 'Profile',
     component: Profile,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/dashboard/profile/:id',
+    name: 'ProfileRouter',
+    component: ProfileRouter,
     meta: {
       requireLogin: true
     }
@@ -217,8 +230,8 @@ const routes = [
   },
   {
     path: '/product-information/product',
-    name: 'Place',
-    component: Place,
+    name: 'ProductInformation',
+    component: ProductInformation,
     meta: {
       requireLogin: true
     }

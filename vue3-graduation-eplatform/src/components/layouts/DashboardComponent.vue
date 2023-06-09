@@ -61,7 +61,7 @@
 
 <script>
 
-import ProfileComponent from '../ProfileComponent.vue';
+import ProfileComponent from '@/components/layouts/ProfileComponent.vue';
 
 export default {
     name: 'DashboardComponent',

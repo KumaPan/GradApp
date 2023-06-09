@@ -1,7 +1,8 @@
 <template>
     <div class="profile-page">
         <DashboardComponent />
-        
+        <h2>stuff</h2>
+        <ProfileComponent />
 </div>
 </template>
 
@@ -10,7 +11,7 @@
 import axios from 'axios'
 // import { response } from 'express';
 import DashboardComponent from '@/components/layouts/DashboardComponent.vue';
-import ProfileComponent from '@/components/ProfileComponent.vue';
+import ProfileComponent from '@/components/layouts/ProfileComponent.vue';
 // import PersonaComponent from '@/components/PersonaComponent.vue';
 
 export default{
@@ -23,21 +24,7 @@ export default{
 },
 
     methods:{
-         logout(){
-            axios
-                .post('/api/v1/token/logout/')
-                .then(response => {
-                    console.log('logged out')
-                })
-                .catch(error => {
-                    console.log(JSON.stringify(error))
-                })
-                axios.defaults.headers.common['Authorization'] = ''
-                localStorage.removeItem('token')
-                this.$store.commit('removeToken')
-
-                this.$router.push('/')
-        }
+      
     }
 }
 </script>
