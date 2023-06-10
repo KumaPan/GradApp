@@ -32,7 +32,7 @@
         </div>
 
         <div v-else id="button-group">
-        <router-link type="button" class="btn text-white ms-2" style="background-color: #0D1E37" :to="{ name: 'ProfileRouter', params: { id:lead.id }}">Login</router-link>
+        <router-link type="button" class="btn text-white ms-2" style="background-color: #0D1E37" to="/login">Login</router-link>
         <router-link type="button" class="btn text-white ms-2" style="background-color: #027B48" to="/sign-up">Sign up</router-link>
       </div>
      
