@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row ">
             <div class="col-md-12">
                 <h2>Product</h2>
                 <div class="overview">
@@ -77,8 +77,52 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <h4>Product excercise</h4>
+                <p class="small">Try this exercise</p>
+                <p class="">In the following table there are some other marketing deceisions that could be done under the four P's.
+                    Try the following excerise by choosing what other decisions can be a part of the Product matrix.
+                </p>
+                <form class="" @submit.prevent="submitForm">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Value 
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="quality">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Quality
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="direct_mailing">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Direct mailing
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="convenience">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Convenience
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="begging_bartering">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Begging and bartering
+                        </label>
+                    </div>
+                    <button class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-12">
+                <h2>What this path is about?</h2>
+                <p>This path goes over what the important aspects of the product among the four p's are.
+                    Plan everything along a checklist of items going through the products existence within the market.
+                </p>
+                <router-link class="btn btn-primary" to="/product-information/product">Start Planning</router-link>
             </div>
         </div>
     </div>
@@ -87,7 +131,33 @@
 <script>
 
 export default {
-    name: 'Product'
+    name: 'Product',
+
+    data (){
+        return {
+            // answers: {},
+            quality:'Quality',
+            direct_mailing:'Direct mailing',
+            convenience:'Convenience',
+            begging_bartering:'Begging and Bartering'
+        }
+    },
+
+    methods: {
+        submitForm(){
+            
+            // const answers = {
+            // quality: this.quality,
+            // direct_mailing: this.direct_mailing,
+            // convenience: this.convenience,
+            // begging_bartering: this.begging_bartering
+            // }
+
+            if(this.quality){
+                console.log('this is checked')
+            }
+        }
+    }
 }
 </script>
 
