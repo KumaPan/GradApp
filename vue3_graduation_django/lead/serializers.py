@@ -10,6 +10,13 @@ class LeadSerializer(serializers.ModelSerializer):
             'created_by',
             'created_at',
             'modified_at',
+
+            'keywords',
+
+            # 'contact_person',
+            # 'email',
+            # 'phone',
+            # 'website',
         ),
 
         fields = (
@@ -22,5 +29,18 @@ class LeadSerializer(serializers.ModelSerializer):
             'estimated_value',
             'status',
             'priority',
+            'bio',
+            'goals',
             
+            'team_members',
+            'brand_description',
+            'brand_name',
+            'product_name',
+            'product_function',
+            'product_packaging',
+            'product_quality',
+            'product_service',
+            'product_design', 
         )
+
+     

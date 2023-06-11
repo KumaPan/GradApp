@@ -18,6 +18,7 @@ import SecondLesson from '../views/Dashboard/SecondLesson.vue'
 import ThirdLesson from '../views/Dashboard/ThirdLesson.vue'
 import DemoPage from '../views/Practice/DemoPage.vue'
 import DemoLearningPage from '../views/Learning/DemoLearningPage.vue'
+import PathTool from '../views/Learning/PathTool.vue'
 import ProfileRouter from '../views/Dashboard/ProfileRouter.vue'
 
 //Components
@@ -160,6 +161,14 @@ const routes = [
     path: '/learning/demo-page',
     name: 'DemoLearningPage',
     component: DemoLearningPage,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/learning/path-tool',
+    name: 'PathTool',
+    component: PathTool,
     meta: {
       requireLogin: true
     }

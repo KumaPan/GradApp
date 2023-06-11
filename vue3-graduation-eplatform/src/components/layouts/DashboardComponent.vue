@@ -53,6 +53,7 @@
             </div>
         </div>
         <div class="col py-3">
+            <router-link type="button" class="btn btn-warning mt-3" to="/">Back</router-link>
             <ProfileComponent />
         </div>
     </div>

@@ -51,4 +51,15 @@ class Lead(models.Model):
     keyword=models.CharField(max_length=255, blank=True, null=True)
     team_members=models.CharField(max_length=255, blank=True, null=True)
 
+    brand_description=models.CharField(max_length=255, blank=True, null=True)
+    brand_name=models.CharField(max_length=255, blank=True, null=True)
+    product_name=models.CharField(max_length=255, blank=True, null=True)
+    product_function=models.CharField(max_length=255, blank=True, null=True)
+    product_packaging=models.CharField(max_length=255, blank=True, null=True)
+    product_quality=models.CharField(max_length=255, blank=True, null=True)
+    product_service=models.CharField(max_length=255, blank=True, null=True)
+    product_design=models.CharField(max_length=255, blank=True, null=True)
+    
+
+
 # Create your models here.

@@ -2,7 +2,7 @@
     <div>
     <div class="container">
         <div class="row justify-content-md-center mt-5 pb-5">
-                <h1 id="subject">E-Learning</h1>
+                <h1 id="subject">Omnichannel E-Learning platform</h1>
             <div class="col-md-6">
                 <img src="https://picsum.photos/id/8/600/400" alt="">
             </div>
