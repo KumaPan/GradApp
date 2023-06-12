@@ -33,32 +33,34 @@
         </div>
         <div class="col">
             <div class="col-md-12 mt-2">
-                <h2>Branding</h2>
-                <p>In this section you will see the different brands that you have added to your profile.
-                    Here you can make a todo list for planning to improve areas of your brand.
+                <h2>Physical product & Service</h2>
+                <p>In this section you will see the different ptroduct that have been ideaslized and planned in the making.
+                    with different designs and functions, you can compare it to other similar products on the market wit hthe competitive 
+                    analysis tool.
                 </p>
             </div>
             <div class="card col-md-12 mt-5" id="branding-card">
                 <h3>Overview</h3>
-                <h6>Core of the product</h6>
+                <h6></h6>
                 <div class="p-1" style="width: 25rem;">
                     <div class="card mt-3 mb-3" 
                     v-for="lead in leads"
                     v-bind:key="lead.id">
                     <img src="https://picsum.photos/id/532/600/400" class="card-img-top" alt="">
                         <div class="card-body">
-                            <h5 class="card-title">Brand name:{{ lead.brand_name }}</h5>
-                            <p class="card-text">Brand description:{{ lead.brand_description }}</p>
+                            <h5 class="card-title">Product name:{{ lead.product_name }}</h5>
+                            <p class="card-text">Product function:{{ lead.product_function }}</p>
+                            <hr>
+                            <p class="card-text">Product service:{{ lead.product_service }}</p>
+                            <hr>
+                            <p class="card-text">Product design:{{ lead.product_design }}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 mt-5">
-                <h3>To-Do List</h3>
-                <h6>Current task to be done </h6><button class="btn btn-light btn-sm"><i class="bi bi-plus-square-fill"></i></button>
-                <div class="to-do">
-
-                </div>
+                <h3>Competitive analysis</h3>
+                
             </div>
         </div>
         </div>
@@ -71,7 +73,7 @@
 import axios from 'axios'
 
 export default {
-    name: 'PathTool',
+    name: 'PhysicalProduct',
 
     data(){
         return{

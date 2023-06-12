@@ -19,6 +19,7 @@ import ThirdLesson from '../views/Dashboard/ThirdLesson.vue'
 import DemoPage from '../views/Practice/DemoPage.vue'
 import DemoLearningPage from '../views/Learning/DemoLearningPage.vue'
 import PathTool from '../views/Learning/PathTool.vue'
+import PhysicalProduct from '../views/Learning/PhysicalProduct.vue'
 import ProfileRouter from '../views/Dashboard/ProfileRouter.vue'
 
 //Components
@@ -169,6 +170,14 @@ const routes = [
     path: '/learning/path-tool',
     name: 'PathTool',
     component: PathTool,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/learning/physical-product',
+    name: 'PhysicalProduct',
+    component: PhysicalProduct,
     meta: {
       requireLogin: true
     }
