@@ -90,6 +90,7 @@ export default {
     data(){
 
         return {
+        leads:{},
 
         brand_description: '',
         brand_name:'',
@@ -101,17 +102,17 @@ export default {
         product_design:'',
 
         //FIELD REQUIRED
-        contact_person: 'Empty',
-        email:'Empty@mail.com',
-        phone:'Empty',
-        website:'Empty',
+        // contact_person: this.contact_person,
+        // email: this.email,
+        // phone: this.phone,
+        // website: this.website,
         }
     },
 
     methods: {
         submitForm(){
             console.log('this form has been handed in')
-            
+            console.log('this is the person',this.contact_person)
 
             const lead = {
                 brand_description: this.brand_description,
@@ -122,10 +123,10 @@ export default {
                 product_quality: this.product_quality,
                 product_service: this.product_service,
                 product_design: this.product_design,
-                contact_person: this.contact_person,
-                email: this.email,
-                phone: this.phone,
-                website: this.website,
+                // contact_person: this.contact_person,
+                // email: this.email,
+                // phone: this.phone,
+                // website: this.website,
             }
             axios
                     .post('/api/v1/leads/', lead)

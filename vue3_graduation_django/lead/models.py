@@ -34,10 +34,10 @@ class Lead(models.Model):
 
 
     lesson = models.CharField(max_length=255, blank=True, null=True)
-    contact_person = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=255)
-    website = models.CharField(max_length=255)
+    contact_person = models.CharField(max_length=255, blank=True)
+    email = models.EmailField(blank=True)
+    phone = models.CharField(max_length=255, blank=True)
+    website = models.CharField(max_length=255, blank=True)
     estimated_value = models.IntegerField(blank=True, null=True)
     status = models.CharField(max_length=255, choices=CHOICES_STATUS, default=NEW)
     priority = models.CharField(max_length=255, choices=CHOICES_PRIORITY, default=MEDIUM)
