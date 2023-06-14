@@ -51,6 +51,8 @@ export default {
 
 .profile-card{
     border-radius: 25px;
-    background-color:#FAF9F6;
+    background-color:#f3f3f3;
+    border: none;
 }
+
 </style>

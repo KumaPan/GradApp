@@ -34,10 +34,10 @@ class Lead(models.Model):
 
 
     lesson = models.CharField(max_length=255, blank=True, null=True)
-    contact_person = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=255)
-    website = models.CharField(max_length=255)
+    contact_person = models.CharField(max_length=255, blank=True)
+    email = models.EmailField(blank=True)
+    phone = models.CharField(max_length=255, blank=True)
+    website = models.CharField(max_length=255, blank=True)
     estimated_value = models.IntegerField(blank=True, null=True)
     status = models.CharField(max_length=255, choices=CHOICES_STATUS, default=NEW)
     priority = models.CharField(max_length=255, choices=CHOICES_PRIORITY, default=MEDIUM)
@@ -50,5 +50,16 @@ class Lead(models.Model):
     goals=models.CharField(max_length=255, blank=True, null=True)
     keyword=models.CharField(max_length=255, blank=True, null=True)
     team_members=models.CharField(max_length=255, blank=True, null=True)
+
+    brand_description=models.CharField(max_length=255, blank=True, null=True)
+    brand_name=models.CharField(max_length=255, blank=True, null=True)
+    product_name=models.CharField(max_length=255, blank=True, null=True)
+    product_function=models.CharField(max_length=255, blank=True, null=True)
+    product_packaging=models.CharField(max_length=255, blank=True, null=True)
+    product_quality=models.CharField(max_length=255, blank=True, null=True)
+    product_service=models.CharField(max_length=255, blank=True, null=True)
+    product_design=models.CharField(max_length=255, blank=True, null=True)
+    
+
 
 # Create your models here.

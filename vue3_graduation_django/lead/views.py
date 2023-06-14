@@ -10,11 +10,13 @@ class LeadViewSet(viewsets.ModelViewSet):
     queryset = Lead.objects.all()
 
 
+
     def get_queryset(self):
         return self.queryset.filter(created_by=self.request.user)
     
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
+   
 
 
 # Create your views here.

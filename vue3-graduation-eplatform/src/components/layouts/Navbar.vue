@@ -24,8 +24,8 @@
           </a>
           <div  :class="{'d-none': isDropdownHidden}" class="dropdown buttonProfile" id="profile">
             <div v-for="lead in leads" v-bind:key="lead.id" class="card card-body" id="profiling">
-              <router-link :to="{ name: 'ProfileRouter', params: { id:lead.id }}"  class="" type="button">Profile</router-link>
-              <a href="/dashboard/leads" class="mt-2" type="button">Lead test</a>
+              <router-link :to="{ name: 'ProfileRouter', params: { id:lead.id }}"  class="" type="button">Profile</router-link> 
+              <router-link to="/learning/path-tool"  class="" type="button">Path tool</router-link>   
               <button @click="logout()" class="btn btn-danger mt-2">Logout</button>
             </div>
           </div>
