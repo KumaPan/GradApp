@@ -55,54 +55,11 @@
             </div>
             <div class="col-md-6 mt-5">
                 <h3>To-Do List</h3>
-                <h6>Current task to be done </h6><button class="btn btn-light btn-sm"><i class="bi bi-plus-square-fill"></i></button>
+                <div class="d-flex">
+                    <h6>Open to do list<button class="btn btn-light btn-sm"><i class="fa-solid fa-arrow-down"></i></button></h6>
+                </div>
                 <div class="to-do">
-                    <main class="app">
-                        <section class="greeting"
-                        v-for="lead in leads"
-                        v-bind:key="lead.id">
-                            <h4 class="title">
-                                <!-- Hello,<input class="form-control" type="text" placeholder="Insert name here" v-model="name"> -->
-                               Welcome {{ lead.contact_person }},
-                            </h4>
-                        </section>
-                        <section class="create-todo">
-                            <h5>Construct to-do list</h5>
-
-
-                            <form @submit.prevent="addTodo">
-                            <h6>What is on your todo list?</h6>
-                            <input type="text" class="form-control" placeholder="e.g. marketing plan for new egg product" v-model="input_content" />
-
-                            <h5>Pick a category</h5>
-                            <div class="options">
-                                <input type="radio" class="btn-check" name="category" value="business" id="business" v-model="input_category">
-                                <label class="btn btn-outline-success" for="business">Business</label>
-
-                                <input type="radio" class="btn-check" name="category" value="personal" id="personal" v-model="input_category">
-                                <label class="btn btn-outline-danger ms-2" for="personal">Personal</label>
-                            </div>
-                            <input type="submit" value="Add Todo" class="btn btn-primary mt-5"/>
-                            </form>
-                        </section>
-                        <section class="todo-list">
-                            <h6>ToDo List</h6>
-                            <div class="list">
-                                <div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
-                                    <label>
-                                        <input type="checkbox" v-model="todo.done"/>
-                                        <span :class="`form-check-input ${todo.category}`"></span>
-                                    </label>
-                                    <div class="todo-content">
-                                        <input type="text" v-model="todo.content" />
-                                    </div>
-                                    <div class="actions">
-                                        <button class="btn btn-danger" @click="removeToDo()">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </main>
+                    <to-do-component></to-do-component>
                 </div>
             </div>
         </div>
@@ -114,13 +71,22 @@
 <script>
 
 import axios from 'axios'
+import ToDoComponent from '@/components/ToDoComponent.vue'
+
 
 export default {
+//   components: { ToDoComponent },
     name: 'PathTool',
+
+   components: {
+    ToDoComponent
+   },
 
     data(){
         return{
-            leads:[]
+            leads:[],
+
+         
         }
     },
     mounted(){
@@ -147,51 +113,6 @@ export default {
 
  <!-- this is the setup for the todo list  --> 
 
-<script setup>
-
-import{ ref, onMounted, computed, watch} from 'vue'
-
-const todos = ref([])
-const name = ref('')
-
-const input_content = ref('')
-const input_category = ref(null)
-
-const todos_asc = computed(() => todos.value.sort((a,b) =>{
-    return b.createdAt - a.createdAt
-}))
-
-const addTodo = () => {
-    if(input_content.value.trim() === '' || input_category.value === null){
-        return
-    }
-    console.log("addTodo");
-    todos.value.push({
-        content: input_content.value,
-        category: input_category.value,
-        done: false,
-        createdAt: new Date().getTime()
-    })
-}
-
-const removeToDo = todo => {
-    console.log('Item removed')
-    todos.value = todos.value.filter(t => t !== todo)
-}
-
-watch(todos, newVal => {
-    localStorage.setItem('todos', JSON.stringify(newVal))
-}, { deep: true })
-
-watch(name, (newVal) => {
-    localStorage.setItem('name', newVal)
-})
-
-onMounted(() => {
-    name.value = localStorage.getItem('name') || ''
-    todos.value = JSON.parse(localStorage.getItem('todos')) || []
-})
-</script>
 
 <style scoped>
 .card{
