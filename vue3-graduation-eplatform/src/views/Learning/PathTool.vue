@@ -43,8 +43,8 @@
                 <h6>Core of the product</h6>
                 <div class="p-1" style="width: 25rem;">
                     <div class="card mt-3 mb-3" 
-                    v-for="lead in leads"
-                    v-bind:key="lead.id">
+                    v-for="(lead, index) in leads"
+                    :key="index">
                     <img src="https://picsum.photos/id/532/600/400" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">Brand name:{{ lead.brand_name }}</h5>
