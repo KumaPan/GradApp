@@ -56,6 +56,7 @@ import axios from 'axios'
             isMounted: false,
             storeState: this.$store.state.isAuthenticated,
             leads: [],
+            leads: {}
           };
         },
 

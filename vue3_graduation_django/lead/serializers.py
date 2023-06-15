@@ -10,8 +10,8 @@ class LeadSerializer(serializers.ModelSerializer):
             'created_by',
             'created_at',
             'modified_at',
-
-            'keywords',
+            'goals',
+        
 
             # 'contact_person',
             # 'email',
@@ -41,6 +41,10 @@ class LeadSerializer(serializers.ModelSerializer):
             'product_quality',
             'product_service',
             'product_design', 
+
+            'created_at',
+            'modified_at',
+            'keyword'
         )
 
      

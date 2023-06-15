@@ -11,6 +11,10 @@
                 <div>
                     <router-link to="/dashboard/leads" class="btn btn-primary" type="button">Edit</router-link>
                 </div>
+                <div v-for="lead in leads" v-bind:key="lead.id">
+                    <router-link :to="{ name: 'ProfileRouter', params: { id:lead.id }}" class="btn btn-primary" type="button">Edit</router-link>
+                </div>
+                
             </div>
             <div class="col-md-6 pt-1">   
                 <div class="card" style="height:15rem; box-shadow: 5px 5px #06AD99;">

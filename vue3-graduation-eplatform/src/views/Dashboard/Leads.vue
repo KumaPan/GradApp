@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div v-for="lead in leads" v-bind:key="lead.id">
-            <router-link :to="{ name: 'ProfileRouter', params: { id:lead.id }}"  class="btn btn-warning mt-3" type="button">back</router-link> 
+        <div class="d-flex" v-for="lead in leads" v-bind:key="lead.id">
+            <router-link :to="{ name: 'ProfileRouter', params: { id:lead.id }}"  class="btn btn-warning mt-3" type="button">Back to No. {{ lead.id }}</router-link> 
         </div>
         <div class="row justify-content-md-center mt-5">
             <div class="col-md-12 mb-3">

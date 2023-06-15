@@ -13,6 +13,7 @@ import Leads from '../views/Dashboard/Leads.vue'
 import Lessons from '../views/Dashboard/Lessons.vue'
 import LessonPrechoice from '../views/Dashboard/LessonPrechoice.vue'
 import AddLead from '../views/Dashboard/AddLead.vue'
+import ProfileRouterEdit from '../views/Dashboard/ProfileRouterEdit.vue'
 import FirstLesson from '../views/Dashboard/FirstLesson.vue'
 import SecondLesson from '../views/Dashboard/SecondLesson.vue'
 import ThirdLesson from '../views/Dashboard/ThirdLesson.vue'
@@ -90,6 +91,14 @@ const routes = [
     path: '/dashboard/profile/:id',
     name: 'ProfileRouter',
     component: ProfileRouter,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/dashboard/profile/:id/edit',
+    name: 'ProfileRouterEdit',
+    component: ProfileRouterEdit,
     meta: {
       requireLogin: true
     }
