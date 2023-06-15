@@ -36,6 +36,7 @@
                         <p><strong>Goals:</strong>{{ lead.goals }}</p>
                         <p><strong>Keywords:</strong>{{ lead.keyword }}</p>
                         <p><strong>Team Members:</strong>{{ lead.team_members }}</p>
+                        <p><strong>Points:</strong>{{ lead.points }}</p>
                     </div>
                 </div>
             </div>

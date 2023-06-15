@@ -114,9 +114,24 @@
                             Begging and bartering
                         </label>
                     </div>
-                    <button class="btn btn-primary">Submit</button>
+                    <button class="btn btn-primary" id="liveToastBtn" @click="showPoints()">Submit</button>
                 </form>
             </div>
+
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                            <strong class="me-auto">Bootstrap</strong>
+                            <small>11 mins ago</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                        <div class="toast-body">
+                             Hello, world! This is a toast message.
+                        </div>
+                </div>
+            </div>
+
             <div class="col-md-12">
                 <h2>What this path is about?</h2>
                 <p>This path goes over what the important aspects of the product among the four p's are.
@@ -129,7 +144,9 @@
 </template>
 
 <script>
-
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
+import axios from 'axios'
 export default {
     name: 'Product',
 
@@ -139,9 +156,14 @@ export default {
             quality:'Quality',
             direct_mailing:'Direct mailing',
             convenience:'Convenience',
-            begging_bartering:'Begging and Bartering'
+            begging_bartering:'Begging and Bartering',
+            points: 1
         }
     },
+
+    // mounted(){
+    //     this.getLeads()
+    // },
 
     methods: {
         submitForm(){
@@ -156,7 +178,30 @@ export default {
             if(this.quality){
                 console.log('this is checked')
             }
-        }
+        },
+        showPoints(){
+            console.log('this is showed')
+            const reward = {
+                points: this.points
+            }
+            toast.success('You have completed the example and earned a Badge!', {
+                autoClose: 3000,
+                position: toast.POSITION.BOTTOM_CENTER
+            });
+
+           
+
+            axios
+                .get('/api/v1/leads/', reward)
+                .then(response=>{
+                    this.leads = response.data
+                })
+
+                .catch(error =>{
+                    console.log(error)
+                })
+            console.log('this is points', this.points)
+        },
     }
 }
 </script>

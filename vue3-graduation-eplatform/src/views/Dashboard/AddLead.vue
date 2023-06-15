@@ -46,6 +46,14 @@
                             <label class="form-label">Team member name</label>
                             <input type="text" class="form-control" v-model="team_members">
                     </div>
+                    <div class="mb-3">
+                            <label class="form-label">Starting points</label>
+                            <input type="number" class="form-control" placeholder="0" v-model="points" disabled>
+                    </div>
+                    <div class="mb-3">
+                            <label class="form-label">Starting Level</label>
+                            <input type="number" class="form-control" placeholder="0" v-model="points" disabled>
+                    </div>
                     
                 </div>
                     <div class="col-md-3 mb-3">
@@ -100,7 +108,9 @@ import axios from 'axios'
                 goals: '',
                 keyword: '',
                 bio: '',
-                team_members: ''
+                team_members: '',
+                points: 0,
+                level_exp:0,
 
 
             }
@@ -119,7 +129,9 @@ import axios from 'axios'
                     bio: this.bio,
                     goals: this.goals,
                     keyword: this.keyword,
-                    team_members:this.team_members
+                    team_members:this.team_members,
+                    points:this.points,
+                    level_exp:this.level_exp
                 }
 
                 axios

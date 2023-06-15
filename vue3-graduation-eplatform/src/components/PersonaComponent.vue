@@ -10,7 +10,7 @@
                             <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 10rem;">
                                 <div class="progress-bar" :style="[width, backgroundColor]"></div>
                             </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Level - {{ lead.level_exp }}</p>
                             <div class="d-grid gap-1">
                                 <a href="#" class="games " style="color: #0C8F7F;" @click="togglefirstClass()">Bagdes</a>
                                 <a href="#" class="games" style="color: #0C8F7F; opacity: 50%;" @click="togglesecondClass()">Leaderboard</a>
@@ -21,11 +21,40 @@
             </div>
             
             <div class="col-md-6" :class="{'d-none': isDropdownHidden}">
-                    <div class="card gameTime" style="width: 30rem; height: 25rem;">
+                    <div class="card gameTime" style="width: 35rem; height: 25rem;">
                         <div class="card-body">
                             <h5 class="card-title"><b>{{ badges }}</b></h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                Inside box
+                            <h6 class="card-subtitle mb-2 text-body-secondary">Earned badges</h6>
+                            <div class="first-badge">
+                            <!-- <p class="text-center"><b></b></p> -->
+                            <div class="row justify-content-center"
+                            v-for="lead in leads"
+                            v-bind:key="lead.id">
+                                <p class="text-center"><b>Product badges</b></p>
+                                <div class="col text-center">
+                                    <img src="@/assets/images/badges_grad.png" alt="tablebox" style="width: 70%;">
+                                    <p>Table {{ lead.points }}</p>
+                                </div>
+                                <div class="col">
+                                    <img src="@/assets/images/badges_grad1.png" alt="vsbox" style="width: 70%;">
+                                </div>
+                                <div class="col">
+                                    <img src="@/assets/images/badges_grad3.png" alt="question" style="width: 70%;">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <p class="text-center"><b>Training badges</b></p>
+                                <div class="col">
+                                    <img src="@/assets/images/badges_grad2.png" alt="starbox" style="width: 70%;">
+                                </div>
+                                <div class="col">
+                                    <img src="@/assets/images/badges_grad3.png" alt="question" style="width: 70%;">
+                                </div>
+                                <div class="col">
+                                    <img src="@/assets/images/badges_grad3.png" alt="question" style="width: 70%;">
+                                </div>
+                            </div>
+                            </div>   
                         </div>
                     </div>
             </div>
@@ -35,7 +64,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><b>{{ leaderboard }}</b></h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                        Inside box
+                         
                     </div>
                 </div>
             </div>
@@ -64,6 +93,7 @@ export default {
     data(){
         return {
             leads:{},
+            leads:[],
             width:'width: 10%',
             backgroundColor:'background-color:#0C8F7F',
             badges:'Badges',
@@ -72,6 +102,8 @@ export default {
             isDropdownHidden: true,
             isDropdownHidden2: true,
             isDropdownHidden3: true,
+            // questionsBadge:'"@/assets/images/badges_grad3.png"'
+            
         }
     },
 
@@ -81,6 +113,7 @@ export default {
 
     methods: {
         getLeads(){
+            
             axios
                 .get('/api/v1/leads/')
                 .then(response=>{
@@ -134,5 +167,9 @@ export default {
     text-decoration: none;
     /* background-color:#f3f3f3; */
     box-shadow: 5px 5px #06AD99;
+}
+
+.first-badge{
+    /* overflow: scroll; */
 }
 </style>

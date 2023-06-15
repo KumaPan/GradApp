@@ -31,6 +31,8 @@ class LeadSerializer(serializers.ModelSerializer):
             'priority',
             'bio',
             'goals',
+            'points',
+            'level_exp',
             
             'team_members',
             'brand_description',

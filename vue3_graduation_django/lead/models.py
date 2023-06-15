@@ -50,6 +50,8 @@ class Lead(models.Model):
     goals=models.CharField(max_length=255, blank=True, null=True)
     keyword=models.CharField(max_length=255, blank=True, null=True)
     team_members=models.CharField(max_length=255, blank=True, null=True)
+    points=models.CharField(max_length=1000,blank=True, null=True)
+    level_exp=models.CharField(max_length=1000,blank=True, null=True)
 
     brand_description=models.CharField(max_length=255, blank=True, null=True)
     brand_name=models.CharField(max_length=255, blank=True, null=True)
