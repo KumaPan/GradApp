@@ -42,13 +42,14 @@
                 <h3>Overview</h3>
                 <h6>Core of the product</h6>
                 <div class="p-1" style="width: 25rem;">
-                    <div class="card mt-3 mb-3" 
-                    v-for="(lead, index) in leads"
-                    :key="index">
+                    <div class="card mt-3 mb-3">
                     <img src="https://picsum.photos/id/532/600/400" class="card-img-top" alt="">
                         <div class="card-body">
-                            <h5 class="card-title">Brand name:{{ lead.brand_name }}</h5>
-                            <p class="card-text">Brand description:{{ lead.brand_description }}</p>
+                           <span v-for="lead in leads" 
+                           v-bind:key="leads.id"><h5 class="card-title">Brand name:{{ lead.brand_name }}</h5></span>
+                            
+                           <span v-for="lead in leads" 
+                           v-bind:key="leads.id"><p class="card-text">Brand description:{{ lead.brand_description }}</p></span>
                         </div>
                     </div>
                 </div>
