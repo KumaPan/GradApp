@@ -4,13 +4,18 @@
             <div class="col-md-6">
                 <div class="profile-card text-center">
                     <div class="card-img-top"><i class="bi bi-person-circle" style="font-size: 10rem;"></i></div>
-                        <div class="card-body" v-for="lead in leads"
-                        v-bind:key="lead.id">
+                        <div class="card-body">
+                            <span v-for="lead in leads"
+                            :key="lead.id">
                             <h5 class="card-title">{{ lead.contact_person }}</h5>
+                            </span>
                             <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 10rem;">
                                 <div class="progress-bar" :style="[width, backgroundColor]"></div>
                             </div>
-                            <p class="card-text">Level - {{ lead.level_exp }}</p>
+                            <span v-for="lead in leads"
+                            :key="lead.id">
+                             <p class="card-text">{{ lead.level_exp }} EXP</p>
+                            </span>
                             <div class="d-grid gap-1">
                                 <a href="#" class="games " style="color: #0C8F7F;" @click="togglefirstClass()">Bagdes</a>
                                 <a href="#" class="games" style="color: #0C8F7F; opacity: 50%;" @click="togglesecondClass()">Leaderboard</a>
@@ -93,7 +98,7 @@ export default {
     data(){
         return {
             leads:{},
-            leads:[],
+            // leads:[],
             width:'width: 10%',
             backgroundColor:'background-color:#0C8F7F',
             badges:'Badges',
@@ -135,6 +140,12 @@ export default {
             this.isDropdownHidden3 = !this.isDropdownHidden3
         },
             
+    },
+
+    computed: {
+        sortedProfile() {
+            
+        }
     }
     
 }

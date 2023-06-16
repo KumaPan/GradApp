@@ -85,7 +85,7 @@
                 </p>
                 <form class="" @submit.prevent="submitForm">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" v-model="valueAns">
                         <label class="form-check-label" for="flexCheckDefault">
                             Value 
                         </label>
@@ -157,7 +157,8 @@ export default {
             direct_mailing:'Direct mailing',
             convenience:'Convenience',
             begging_bartering:'Begging and Bartering',
-            points: 1
+            points: 1,
+            valueAns: ''
         }
     },
 
@@ -184,23 +185,33 @@ export default {
             const reward = {
                 points: this.points
             }
-            toast.success('You have completed the example and earned a Badge!', {
+            if(this.valueAns === true){
+                toast.success('You have completed the example and earned a Badge!', {
                 autoClose: 3000,
                 position: toast.POSITION.BOTTOM_CENTER
             });
+            } else {
+                toast.warning('Wrong answer, Chooce again!', {
+                autoClose: 3000,
+                position: toast.POSITION.BOTTOM_CENTER
+            });
+            }
+            
+           
 
            
 
-            axios
-                .get('/api/v1/leads/', reward)
-                .then(response=>{
-                    this.leads = response.data
-                })
+            // axios
+            //     .get('/api/v1/leads/', reward)
+            //     .then(response=>{
+            //         this.leads = response.data
+            //     })
 
-                .catch(error =>{
-                    console.log(error)
-                })
-            console.log('this is points', this.points)
+            //     .catch(error =>{
+            //         console.log(error)
+            //     })
+                
+            // console.log('this is points', this.points)
         },
     }
 }
