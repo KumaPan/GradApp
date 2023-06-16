@@ -85,7 +85,7 @@
                 </p>
                 <form class="" @submit.prevent="submitForm">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" v-model="value">
                         <label class="form-check-label" for="flexCheckDefault">
                             Value 
                         </label>
@@ -153,11 +153,12 @@ export default {
     data (){
         return {
             // answers: {},
-            quality:'Quality',
-            direct_mailing:'Direct mailing',
-            convenience:'Convenience',
-            begging_bartering:'Begging and Bartering',
-            points: 1
+            quality:'',
+            direct_mailing:'',
+            convenience:'',
+            begging_bartering:'',
+            points: 1,
+            value: ''
         }
     },
 
@@ -181,26 +182,43 @@ export default {
         },
         showPoints(){
             console.log('this is showed')
-            const reward = {
-                points: this.points
-            }
-            toast.success('You have completed the example and earned a Badge!', {
+            // const reward = {
+            //     points: this.points
+            // }
+            if(this.value && this.quality && this.convenience === true){
+
+                toast.success('You have completed the example and earned a Badge! Head to profile to see your badge.', {
+                autoClose: 6000,
+                position: toast.POSITION.BOTTOM_CENTER
+            });
+
+            } else if(this.value && this.quality === true) {
+                toast.warning('Very close, missing one more!', {
                 autoClose: 3000,
                 position: toast.POSITION.BOTTOM_CENTER
             });
 
+            } else{
+                toast.error('Wrong try again!', {
+                autoClose: 3000,
+                position: toast.POSITION.BOTTOM_CENTER
+            });
+
+            }
+            
+
            
 
-            axios
-                .get('/api/v1/leads/', reward)
-                .then(response=>{
-                    this.leads = response.data
-                })
+            // axios
+            //     .get('/api/v1/leads/', reward)
+            //     .then(response=>{
+            //         this.leads = response.data
+            //     })
 
-                .catch(error =>{
-                    console.log(error)
-                })
-            console.log('this is points', this.points)
+            //     .catch(error =>{
+            //         console.log(error)
+            //     })
+            // console.log('this is points', this.points)
         },
     }
 }

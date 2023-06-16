@@ -1,11 +1,13 @@
 <template>
-    <div class="container">
-        <h2 class="text-center mt-4">This is the todo list</h2>
+    <div class="">
+        <h2 class="text-center mt-4">Current list</h2>
 
         <!-- this is the input -->
         <div class="d-flex">
             <input type="text" placeholder="enter text" class="form-control" v-model="task">
             <button class="btn btn-warning ms-2" @click="submitTask">Submit</button>
+
+
         </div>
 
         <!-- table for task -->

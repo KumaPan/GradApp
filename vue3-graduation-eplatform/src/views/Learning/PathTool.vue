@@ -42,24 +42,49 @@
                 <h3>Overview</h3>
                 <h6>Core of the product</h6>
                 <div class="p-1" style="width: 25rem;">
-                    <div class="card mt-3 mb-3" 
-                    v-for="(lead, index) in leads"
-                    :key="index">
+                    <div class="card mt-3 mb-3">
                     <img src="https://picsum.photos/id/532/600/400" class="card-img-top" alt="">
                         <div class="card-body">
-                            <h5 class="card-title">Brand name:{{ lead.brand_name }}</h5>
-                            <p class="card-text">Brand description:{{ lead.brand_description }}</p>
+                            <span v-for="lead in leads"
+                            :key="lead.id">
+                                <div v-if="lead.brand_name == null">
+                                    <h5 class="card-title"></h5>
+                                </div>
+                                    <div v-if="lead.brand_name !== null">
+                                        <h5 class="card-title">Brand name:{{ lead.brand_name }}</h5>
+                                    </div>
+                            </span>
+
+                            <span v-for="lead in leads"
+                            :key="lead.id">
+                                <div v-if="lead.brand_name == null">
+                                    <p class="card-text"></p>
+                               </div>
+                                    <div v-if="lead.brand_name !== null">
+                                        <p class="card-text">Brand description:{{ lead.brand_description }}</p>
+                                    </div>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 mt-5">
-                <h3>To-Do List</h3>
-                <div class="d-flex">
-                    <h6>Open to do list<button class="btn btn-light btn-sm"><i class="fa-solid fa-arrow-down"></i></button></h6>
+                <h3>Create New task</h3>
+                <div class="ms-3">
+                    <h6 class="">what will you do this week?</h6>
                 </div>
                 <div class="to-do">
                     <to-do-component></to-do-component>
+                </div>
+            </div>
+            
+            <div class="col-md-12 mt-5 text-center" >
+                <h3>Tracking & Progression</h3>
+                <div class="">
+                    <h6 class="">Keep up to date with task this week!</h6>
+                </div>
+                <div class="tracking" id="tracking-box">
+                    <tracking-component></tracking-component>
                 </div>
             </div>
         </div>
@@ -72,19 +97,21 @@
 
 import axios from 'axios'
 import ToDoComponent from '@/components/ToDoComponent.vue'
-
+import TrackingComponent from '@/components/TrackingComponent.vue'
 
 export default {
 //   components: { ToDoComponent },
     name: 'PathTool',
 
    components: {
-    ToDoComponent
+    ToDoComponent,
+    TrackingComponent
    },
 
     data(){
         return{
             leads:[],
+            // brand_name: 
 
          
         }
@@ -121,5 +148,13 @@ export default {
 
 #branding-card{
     background-color: rgb(231, 231, 231);
+}
+
+#tracking-box{
+    border-radius: 25px;
+    background-color: #0C8F7F;
+    height: 30rem;
+    margin-bottom:2rem;
+    box-shadow: -5px 5px #06ad9993;
 }
 </style>

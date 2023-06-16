@@ -4,13 +4,31 @@
             <div class="col-md-6">
                 <div class="profile-card text-center">
                     <div class="card-img-top"><i class="bi bi-person-circle" style="font-size: 10rem;"></i></div>
-                        <div class="card-body" v-for="lead in leads"
-                        v-bind:key="lead.id">
-                            <h5 class="card-title">{{ lead.contact_person }}</h5>
+                        <div class="card-body">
+                            <span v-for="lead in leads"
+                            v-bind:key="lead.id">
+                            <div v-if="lead.contact_person == null">
+                                <h5 class="card-title"></h5>
+                            </div>
+                            <div v-else>
+                                <h5 class="card-title">{{ lead.contact_person }}</h5>
+                            </div>
+                            
+                            </span>
+                            
                             <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 10rem;">
                                 <div class="progress-bar" :style="[width, backgroundColor]"></div>
                             </div>
-                            <p class="card-text">Level - {{ lead.level_exp }}</p>
+
+                            <span v-for="lead in leads"
+                            v-bind:key="lead.id">
+                                <div v-if="lead.level_exp == null">
+                                    <p class="card-text"></p>
+                                </div>
+                                <div v-else>
+                                    <p class="card-text">Level - {{ lead.level_exp }}</p>
+                                </div>
+                            </span>
                             <div class="d-grid gap-1">
                                 <a href="#" class="games " style="color: #0C8F7F;" @click="togglefirstClass()">Bagdes</a>
                                 <a href="#" class="games" style="color: #0C8F7F; opacity: 50%;" @click="togglesecondClass()">Leaderboard</a>

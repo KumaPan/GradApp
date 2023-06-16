@@ -56,6 +56,22 @@
                             </div>
                         </section>
                     </main>
+
+                    <div class="p-1" style="width: 25rem;">
+                    <div class="card mt-3 mb-3">
+                    <img src="https://picsum.photos/id/532/600/400" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <span v-for="lead in leads"
+                            :key="lead.id">
+                                <h5 class="card-title">Brand name:{{ lead.brand_name }}</h5>
+                            </span>
+                            <span v-for="lead in leads"
+                            :key="lead.id">
+                             <p class="card-text">Brand description:{{ lead.brand_description }}</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
     </div>
 </template>
 
