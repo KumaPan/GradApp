@@ -45,13 +45,11 @@
                             <h6 class="card-subtitle mb-2 text-body-secondary">Earned badges</h6>
                             <div class="first-badge">
                             <!-- <p class="text-center"><b></b></p> -->
-                            <div class="row justify-content-center"
-                            v-for="lead in leads"
-                            v-bind:key="lead.id">
+                            <div class="row justify-content-center">
                                 <p class="text-center"><b>Product badges</b></p>
-                                <div class="col text-center">
+                                <div class="col text-center"  >
                                     <img src="@/assets/images/badges_grad.png" alt="tablebox" style="width: 70%;">
-                                    <p>Table {{ lead.points }}</p>
+                                    <p>Table</p>
                                 </div>
                                 <div class="col">
                                     <img src="@/assets/images/badges_grad1.png" alt="vsbox" style="width: 70%;">

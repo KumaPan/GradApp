@@ -50,10 +50,14 @@
     </tr>
   </tbody>
 </table>
+<!-- <tracking-component :names="task.name"></tracking-component> -->
     </div>
 </template>
 
 <script>
+
+import TrackingComponent from '@/components/TrackingComponent.vue'
+
 export default {
     name: 'ToDoComponent',
 
@@ -73,6 +77,10 @@ export default {
                 }
             ]
         }
+    },
+
+    components:{
+TrackingComponent
     },
 
     methods: {

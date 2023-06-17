@@ -72,7 +72,7 @@
                                     Informing & Advertisements. Key methods to spreading the word of your product to the masses.
                                     Learn how to plan the right approaches to product promotion 
                                 </p>
-                                <a href="#" class="btn btn-primary">Read more</a>
+                                <a href="/dashboard/lessons" class="btn btn-primary">Read more</a>
                             </div>
                         </div>
                 </div>

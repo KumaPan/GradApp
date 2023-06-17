@@ -15,6 +15,9 @@
           <li v-if="$store.state.isAuthenticated">
             <router-link class="nav-link active" aria-current="page" href="#" to="/dashboard/lesson-prechoice">Path</router-link>
           </li>
+          <li v-if="$store.state.isAuthenticated">
+            <router-link class="nav-link active" aria-current="page" href="#" to="/dashboard/lessons">Lesson</router-link>
+          </li>
       </ul>
   
        
