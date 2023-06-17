@@ -1,8 +1,30 @@
 <template>
-    <div class="">
-        
-        <DashboardComponent />
+    <div class="container-fluid">
         <h2>test page</h2>
+        <div class="row" id="backBG">
+        <div class="col-md-6">
+            <form>
+                <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Default checkbox
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+  <label class="form-check-label" for="flexCheckChecked">
+    Checked checkbox
+  </label>
+</div>
+            </form>
+        </div>
+    </div>
+
+        
+    
+   
+
+        
         <!-- <Bar
     id="my-chart-id"
     :options="chartOptions"
@@ -10,19 +32,19 @@
   /> -->
 
   <!-- <Line :data="data" :options="options" /> -->
-  <main class="app">
+  <!-- <main class="app">
                         <section class="greeting"
                         v-for="lead in leads"
                         v-bind:key="lead.id">
-                            <h4 class="title">
+                            <h4 class="title"> -->
                                 <!-- Hello,<input class="form-control" type="text" placeholder="Insert name here" v-model="name"> -->
-                               Welcome {{ lead.contact_person }},
+                               <!-- Welcome {{ lead.contact_person }},
                             </h4>
                         </section>
                         <section class="create-todo">
-                            <h5>Construct to-do list</h5>
+                            <h5>Construct to-do list</h5> -->
 
-
+<!-- 
                             <form @submit.prevent="addTodo">
                             <h6>What is on your todo list?</h6>
                             <input type="text" class="form-control" placeholder="e.g. marketing plan for new egg product" v-model="input_content" />
@@ -71,7 +93,7 @@
                             </span>
                         </div>
                     </div>
-                </div>
+                </div> -->
     </div>
 </template>
 
@@ -167,5 +189,9 @@ onMounted(() => {
 
 
 <style>
-
+#backBG{
+    background-color:rgb(121, 121, 121);
+    border-radius: 25px 25px;
+    height: 10rem;
+}
 </style>
