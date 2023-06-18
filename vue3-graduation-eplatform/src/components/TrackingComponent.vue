@@ -40,7 +40,7 @@
                                         </td>
                                         <td>
                                             <div class="text-center" @click="earnReward(index)">
-                                                <span class="fa-solid fa-check-to-slot"></span>
+                                                <span class="pointer fa-solid fa-check-to-slot"></span>
                                             </div>
                                         </td>
                                     </tr>
@@ -68,7 +68,8 @@
 </template>
 
 <script>
-
+import { Bounce, Flip, toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
 
 export default {
     name: 'TrackingComponent',
@@ -127,6 +128,13 @@ export default {
 
             this.tasks.splice(index, 1);
             this.barValue="50%"
+
+            toast.success('Congradulation, youve earned some experience!', {
+                autoClose: 3000,
+                position: toast.POSITION.BOTTOM_CENTER,
+                transition: Bounce,
+                theme: 'colored'
+            });
         },
     },
 }

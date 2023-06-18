@@ -55,7 +55,8 @@
 </template>
 
 <script>
-
+import { Bounce, Flip, toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
 import TrackingComponent from '@/components/TrackingComponent.vue'
 
 export default {
@@ -100,6 +101,13 @@ TrackingComponent
       }
 
       this.task = "";
+
+      toast.info('New task added to the list!', {
+                autoClose: 3000,
+                position: toast.POSITION.BOTTOM_CENTER,
+                transition: Bounce,
+                theme: 'colored'
+            });
     },
         deleteTask(index){
             this.tasks.splice(index, 1);

@@ -144,7 +144,7 @@
 </template>
 
 <script>
-import { toast } from 'vue3-toastify';
+import { Bounce, toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
 import axios from 'axios'
 export default {
@@ -189,19 +189,25 @@ export default {
 
                 toast.success('You have completed the example and earned a Badge! Head to profile to see your badge.', {
                 autoClose: 6000,
-                position: toast.POSITION.BOTTOM_CENTER
+                position: toast.POSITION.BOTTOM_CENTER,
+                transition: Bounce,
+                theme: 'colored'
             });
 
             } else if(this.value && this.quality === true) {
                 toast.warning('Very close, missing one more!', {
                 autoClose: 3000,
-                position: toast.POSITION.BOTTOM_CENTER
+                position: toast.POSITION.BOTTOM_CENTER,
+                transition: Bounce,
+                theme: 'colored'
             });
 
             } else{
                 toast.error('Wrong try again!', {
                 autoClose: 3000,
-                position: toast.POSITION.BOTTOM_CENTER
+                position: toast.POSITION.BOTTOM_CENTER,
+                transition: Bounce,
+                theme: 'colored'
             });
 
             }
