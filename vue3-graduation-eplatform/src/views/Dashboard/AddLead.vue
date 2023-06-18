@@ -39,12 +39,13 @@
                             <textarea class="form-control" id="biography" cols="30" rows="3" placement="Example - In our company we aspire to connect with our target audience" v-model="goals"></textarea>
                     </div>
                     <div class="mb-3">
-                            <label class="form-label">Keyword</label>
-                            <input type="text" class="form-control" placeholder="Example - omnichannel" v-model="keyword">
+                            <label class="form-label">Keyword</label> 
+                            <input type="text" class="form-control" placeholder="Enter one the following - Omnichannel, Design, or Dynamic" v-model="keyword">
                     </div>
+                    
                     <div class="mb-3">
                             <label class="form-label">Team member name</label>
-                            <input type="text" class="form-control" v-model="team_members">
+                            <input type="text" class="form-control" placeholder="For other members partaking in leadboards" v-model="team_members" disabled>
                     </div>
                     <div class="mb-3">
                             <label class="form-label">Starting points</label>

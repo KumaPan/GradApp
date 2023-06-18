@@ -9,11 +9,11 @@
                 <h2 class="">{{ lead.title }}</h2>
                 <hr>
                 <div>
-                    <router-link to="/dashboard/leads" class="btn btn-primary" type="button">Edit</router-link>
+                    <router-link to="/dashboard/leads" class="btn btn-primary" type="button">Edit Profile</router-link>
                 </div>
-                <div v-for="lead in leads" v-bind:key="lead.id">
+                <!-- <div v-for="lead in leads" v-bind:key="lead.id">
                     <router-link :to="{ name: 'ProfileRouter', params: { id:lead.id }}" class="btn btn-primary" type="button">Edit</router-link>
-                </div>
+                </div> -->
                 
             </div>
             <div class="col-md-6 pt-1">   
