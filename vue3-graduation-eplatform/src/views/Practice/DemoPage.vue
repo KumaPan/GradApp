@@ -2,13 +2,13 @@
     <div class="container-fluid">
         <div class="left">
             <label for="">HTML <i class="fa-brands fa-html5"></i></label>
-            <textarea class="form-control" placeholder="html code" id="html-code"></textarea>
+            <textarea class="form-control" placeholder="html code" id="html-code" onkeyup="run()"></textarea>
 
             <label for="">CSS <i class="fa-brands fa-css3-alt"></i></label>
-            <textarea class="form-control" placeholder="Css code" id="css-code"></textarea>
+            <textarea class="form-control" placeholder="Css code" id="css-code" onkeyup="run()"></textarea>
 
             <label for="">JavaScript <i class="fa-brands fa-square-js"></i></label>
-            <textarea class="form-control" placeholder="js code" id="js-code"></textarea>
+            <textarea class="form-control" placeholder="js code" id="js-code" onkeyup="run()"></textarea>
             
         </div>
         <div class="right">
@@ -49,13 +49,18 @@
 <script>
 
 export default {
-    name: 'DemoPage'
+    name: 'DemoPage',
+
+    methods: {
+        run(){
+            let htmlCode = document.getElementById("html-code");
+            let cssCode = document.getElementById("css-code");
+            let jsCode = document.getElementById("js-code");
+            let output = document.getElementById("output");
+        }
+    }
 }
 
-
-
-
-    
 
 </script>
 
@@ -92,6 +97,19 @@ iframe{
     background: #fff;
     border: 0;
     outline: 0;
+}
+
+label i{
+    margin-right: 10px;
+    margin-left:10px;
+}
+
+label{
+   display: flex; 
+   align-items: center;
+   background: #000;
+   height: 30px;
+   /* padding-bottom: 10px; */
 }
 </style>
 
