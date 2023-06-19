@@ -24,7 +24,7 @@
                     </li>
                     <li>
                         <a href="#"  class="nav-link px-0 align-middle text-white">
-                            <i class="bi bi-explicit"></i><span class="ms-1 d-none d-sm-inline">Extenstion & Warranty</span>
+                            <i class="bi bi-explicit"></i><span class="ms-1 d-none d-sm-inline" style="text-decoration: line-through;">Extenstion & Warranty</span>
                         </a>
                     </li>
                 </ul>

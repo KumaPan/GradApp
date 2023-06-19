@@ -8,30 +8,30 @@
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0 text-white">
+                        <a href="/" class="nav-link align-middle px-0 text-white">
                             <i class="bi bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+                        <a href="/dashboard/profile" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
                             <i class="bi bi-clipboard"></i> <span class="ms-1 d-none d-sm-inline">Overview</span> 
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link px-0 align-middle text-white">
-                            <i class="bi bi-bar-chart-line-fill"></i><span class="ms-1 d-none d-sm-inline">Progression</span></a>
+                            <i class="bi bi-bar-chart-line-fill"></i><span class="ms-1 d-none d-sm-inline" style="text-decoration: line-through;">Progression</span></a>
                     </li>
                     <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
-                            <i class="bi bi-people-fill"></i><span class="ms-1 d-none d-sm-inline">Team members</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle text-white">
-                            <i class="bi bi-info-circle"></i> <span class="ms-1 d-none d-sm-inline">Feedback</span> </a>
+                        <a href="#" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white" >
+                            <i class="bi bi-people-fill"></i><span class="ms-1 d-none d-sm-inline" style="text-decoration: line-through;">Team members</span></a>
                     </li>
                     <li>
                         <a href="#" class="nav-link px-0 align-middle text-white">
-                            <i class="bi bi-gear"></i> <span class="ms-1 d-none d-sm-inline">Settings</span> </a>
+                            <i class="bi bi-info-circle"></i> <span class="ms-1 d-none d-sm-inline" style="text-decoration: line-through;">Feedback</span> </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle text-white">
+                            <i class="bi bi-gear"></i> <span class="ms-1 d-none d-sm-inline" style="text-decoration: line-through;">Settings</span> </a>
                     </li>
                 </ul>
                 <hr>

@@ -36,6 +36,12 @@
         </p>
  </section>
  <hr class="hr">
+
+<div class="text-center mt-5">
+    <router-link type="button" to="/practice/demo-page" class="btn btn-success">Practice</router-link>
+    <router-link type="button" to="/learning/demo-page" class="btn btn-success ms-2">Learning</router-link>
+</div>
+
 </div>
 </template>
 

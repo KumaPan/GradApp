@@ -26,7 +26,7 @@
                                     <p class="card-text"></p>
                                 </div>
                                 <div v-else>
-                                    <p class="card-text">Level - {{ lead.level_exp }}</p>
+                                    <p class="card-text">Level - {{ lead.level_exp }} - Beginner</p>
                                 </div>
                             </span>
                             <div class="d-grid gap-1">
@@ -77,20 +77,22 @@
 
             <div class="col-md-6" :class="{'d-none': isDropdownHidden2}">
                 <div class="card gameTime" style="width: 30rem; height: 25rem;">
-                    <div class="card-body">
+                    <div class="card-body" v-for="lead in leads"
+                            v-bind:key="lead.id">
                         <h5 class="card-title"><b>{{ leaderboard }}</b></h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                         
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Name of Team members</h6>
+                         {{ lead.team_members }} {{ member_status }}
                     </div>
                 </div>
             </div>
             
             <div class="col-md-6" :class="{'d-none': isDropdownHidden3}">
                 <div class="card gameTime" style="width: 30rem; height: 25rem;">
-                    <div class="card-body">
+                    <div class="card-body" v-for="lead in leads"
+                            v-bind:key="lead.id">
                         <h5 class="card-title"><b>{{ stats }}</b></h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                        Inside box
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Current stats</h6>
+                        Current points <b>{{ lead.points }} </b> {{ member_status }}
                     </div>
                 </div>
             </div>
@@ -119,6 +121,7 @@ export default {
             isDropdownHidden2: true,
             isDropdownHidden3: true,
             // questionsBadge:'"@/assets/images/badges_grad3.png"'
+            member_status: '- is Disabled'
             
         }
     },
