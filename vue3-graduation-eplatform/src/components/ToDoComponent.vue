@@ -112,6 +112,12 @@ TrackingComponent
         deleteTask(index){
             this.tasks.splice(index, 1);
 
+            toast.error('Task deleted from the list!', {
+                autoClose: 3000,
+                position: toast.POSITION.BOTTOM_CENTER,
+                transition: Bounce,
+                theme: 'colored'
+            });
         },
         editTask(index){
             this.task = this.tasks[index].name;
