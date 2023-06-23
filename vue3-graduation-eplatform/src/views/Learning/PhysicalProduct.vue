@@ -60,7 +60,25 @@
             </div>
             <div class="col-md-12 mt-5">
                 <h3>Competitive analysis</h3>
-                
+                <p><b>Comparing products to products</b></p>
+                <p>Using the following tool will allow you to compare the specifica parts of your application with your very own product </p>
+                <div class="d-flex justify-content-center">
+                    <div class="comp-box">
+                        <div class="d-flex ms-3 mb-3 mt-4">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-success btn-sm">Graph 1</button>
+                                <button type="button" class="btn btn-success btn-sm">Graph 2</button>
+                            </div>
+                        </div>
+                        <p class="text-center"><b>Competitive analysis toolbox</b></p>
+                        <div class="frist-graphBox">
+
+                        </div>
+                        <div class="second-graphBox">
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </div>
@@ -109,5 +127,15 @@ export default {
 
 #branding-card{
     background-color: rgb(231, 231, 231);
+}
+
+.comp-box{
+    border-radius: 25px;
+    background-color: #0C8F7F;
+    height: 35rem;
+    width: 70rem;
+    margin-bottom:2rem;
+    margin-left: 5rem;
+    box-shadow: -5px 5px #06ad9993;
 }
 </style>

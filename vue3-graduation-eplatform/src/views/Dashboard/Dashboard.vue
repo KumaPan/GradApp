@@ -31,7 +31,10 @@
                     </p>
 
                     <h4>Lets get started</h4>
-                    <p>Head to the profile page and click on edit profile. It is located in the navbar on the top right.</p> 
+                    <p>Head to the profile page and click on edit profile.</p> 
+                    <div  class="d-flex justify-content-center">
+                        <router-link to="/dashboard/profile/:id" class="btn btn-primary">Profile</router-link>
+                    </div>
                 </div>
         </div>
     </div>
