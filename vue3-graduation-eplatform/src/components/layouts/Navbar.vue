@@ -6,9 +6,14 @@
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <div>
+          <li v-if="$store.state.isAuthenticated" class="nav-item">
+          <router-link class="nav-link active" aria-current="page" href="#" to="/dashboard">Home</router-link>
+        </li>
+        <li v-else class="nav-item">
           <router-link class="nav-link active" aria-current="page" href="#" to="/">Home</router-link>
         </li>
+        </div>        
           <li v-if="$store.state.isAuthenticated">
             <router-link class="nav-link active" aria-current="page" href="#" to="/dashboard/lesson-prechoice">Path</router-link>
           </li>

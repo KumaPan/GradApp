@@ -7,12 +7,13 @@
             <div class="col-md-12 mb-3">
                 <h2>Personal information</h2>
                 <router-link to="/dashboard/leads/add" type="button" class="btn btn-primary">Add Info</router-link>
-                <table class="table">
+                <table class="table table-borded">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Lesson</th>
                             <th scope="col">Contact person</th>
+                            <th scope="col">Chosen team name</th>
                             <th scope="col">Status</th>
                         </tr>
                     </thead>
@@ -22,8 +23,10 @@
                         v-bind:key="lead.id"
                         >
                             <th scope="row">1</th>
-                                <td>{{ lead.lesson }}</td>
+                                <td>{{ lead.keyword }}</td>
+                                <!-- <td>{{ lead.lesson }}</td> -->
                                 <td>{{ lead.contact_person }}</td>
+                                <td>{{ lead.team_member }}</td>
                                 <td>{{ lead.status }}</td>
                         </tr>
                         <!-- <tr>
@@ -40,6 +43,9 @@
                     </tbody>
                 </table>
             </div>
+            <!-- <div class="col-md-12 mt-5">
+                <h2>O</h2>
+            </div> -->
         </div>
     </div>
 </template>

@@ -54,6 +54,7 @@
                             <p class="card-text">Product service:{{ lead.product_service }}</p>
                             <hr>
                             <p class="card-text">Product design:{{ lead.product_design }}</p>
+                            <a href="#" class="btn btn-primary">Select product</a>
                         </div>
                     </div>
                 </div>
@@ -70,7 +71,22 @@
                                 <button type="button" class="btn btn-success btn-sm">Graph 2</button>
                             </div>
                         </div>
+                        <div v-for="lead in leads"
+                            v-bind:key="lead.id"  
+                            class="col-md-3 ms-3" id="comparison-brand">
+                                <div v-if="lead.product_name == null">
+                                </div>
+
+                                <select v-if="lead.product_name !== null"
+                                class="form-select" aria-label="Default select example">
+                                    <option selected>Choose product</option>
+                                    <option>{{lead.product_name}}</option>
+                                </select>
+
+    
+                            </div>
                         <p class="text-center"><b>Competitive analysis toolbox</b></p>
+                        <h6 class="text-center">Name of product selected</h6>
                         <div class="frist-graphBox">
 
                         </div>
