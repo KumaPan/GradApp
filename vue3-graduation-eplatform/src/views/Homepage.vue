@@ -2,13 +2,16 @@
     <div class="container-fluid">
     
         <div class="row justify-content-md-center pb-5" id="bgColor1" style="height: 25rem;">
-              <div class="content-container">
-                    <div class="col-auto mt-5 pe-5 justify-content-center">
+              <div class="d-flex ms-5">
+                    <div class="col-md-6 mt-5 pe-5 justify-content-center">
                     <h2 class="text-white subheadingText">A great solution for your business!</h2>
                     <p class="insectionText"><b>Learning made easy.</b> Why take the long when there's a simple short cut right here, right now!</p>
+                    
+                    <button class="btn me-5" style="background-color: #06AD99;">Get started</button>
+                    <a class="" href="#" type="button" id="vidLink"><i class="bi bi-play-circle-fill"></i> What is this all about?</a>
                 </div>
-                <div class="col-auto mt-5 pb-5 ms-5">
-                    <!-- <img src="https://picsum.photos/id/8/600/400" alt=""> -->
+                <div class="col-md-6 pb-5 ms-5" id="floatingLogo">
+                    <img src="@/assets/images/isometric-business.png" alt="business-iso" style="height: 25rem; width: 30rem;">
                 </div>
               </div>  
         </div> 
@@ -54,7 +57,19 @@
                 </div>
             </div>
             
-    
+            <div class="row" id="bgColor1">
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     
         
@@ -109,6 +124,18 @@ export default{
 .insectionText{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #152238;
-    font-size: medium;
+    font-size: light;
+}
+
+.btn{
+    border-radius: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+#vidLink{
+    text-decoration: none;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 </style>
