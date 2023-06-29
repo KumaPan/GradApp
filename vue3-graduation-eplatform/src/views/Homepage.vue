@@ -16,6 +16,7 @@
         <div class="row">
             <div class="col-md-12" id="bgBland" style="height: 7rem;">
                 <h2 class="text-center headingText" >Supporting Businesess</h2>
+                <p class="text-center">Honorable supporters</p>
                 <div class="d-flex justify-content-center">
                     <!-- <img src="@/assets/images/123tcslogo.png" alt="tcs" style="height: 100%; width: 100%;"> -->
                     <!-- <img src="@/assets/images/ccvlogo.png" alt="ccv" style="height: 100%; width: 100%;"> -->
@@ -27,7 +28,7 @@
     
 
         
-            <div class="row justify-content-md-center" id="bgColor2">
+            <div class="row justify-content-md-center" id="">
                 <h2 class="text-center headingText">About</h2>
                 <div class="col-md-6" >
                 <h4 class="subheadingText">The Application</h4>
@@ -45,6 +46,11 @@
 
                 <div class="col-md-6" >
                 <h4 class="subheadingText">The company behind it</h4>
+                <p class="insectionText text-start">Here at <b>Actablue</b>, we create software sollutions for retail and wholesale companies. These
+                sollutions aim to simplify the way people work or take out the miscelaneous procesess. We prodive many other services
+                as well besides software sollutions. 
+                </p>
+                <a href="#" type="button" class="btn btn-info" style>Learn more</a>
                 </div>
             </div>
             
@@ -102,7 +108,7 @@ export default{
 
 .insectionText{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
+    color: #152238;
     font-size: medium;
 }
 </style>
