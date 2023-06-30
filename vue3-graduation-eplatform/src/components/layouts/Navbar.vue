@@ -42,7 +42,7 @@
         <router-link type="button" class="btn text-white ms-2" style="background-color: #027B48" to="/sign-up">Sign up</router-link>
       </div>
      
-      <button @click="logout()" class="btn btn-danger ms-2">Logout</button>
+      <!-- <button @click="logout()" class="btn btn-danger ms-2">Logout</button> -->
     </div>
   </div>
 </nav>
